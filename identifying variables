@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    int tom;
+    int Tom;
+    int errorcode;
+    // Instead of a, b, c use well defined variables
+    printf("Hello world");
+    
+    return 0;
+}
