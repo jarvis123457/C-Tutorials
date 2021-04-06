@@ -6,9 +6,11 @@ int main() {
     int a = 4;
     float b = 8.5;
     char c = 'u';
-    printf("The value of a is %d, the value b is %f, and the value of c is %c", a, b, c);
+    int d = 45;
+    int e = 45 + 4;
+    printf("The value of a is %d,\nthe value b is %f,\nand the value of c is %c\n", a, b, c);
     
-    
+    printf("Sum of a and d is %d\n", a+d);
+    printf("Sum of a and d is %d", e);
     return 0;
 }
-57:01
