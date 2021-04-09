@@ -9,6 +9,7 @@ int main(){
     return 0;
     
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ARITHMETIC OPERATORS
 #include <stdio.h>
 int main(){
@@ -35,3 +36,11 @@ int main(){
     float and float variables give float answer regardless of mathematical operation.*/
     
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------
+    // Control Instructions
+/* Determines flow of control in aprogram.
+    1. Sequence Control Instruction
+    Sequence control instruction ensures that the instructions are executed in the same order in which they appear in the program
+    2. Decision Control Instruction
+    3. Loop Control Instruction
+    4. Case Control Instruction*/ 
