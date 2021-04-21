@@ -52,4 +52,83 @@ float weight(float m){
   return W;
 }
 /*--------------------------------------------------------------------------*/
-
+/* Q4: Write a program using recursion to calculate nth element of the fibonacci series. */
+#include<stdio.h>
+int fibonacci(int n);
+int main(){
+  int n;
+  printf("Enter the value of n\n");
+  scanf("%d", &n);
+  printf("The %dth term is %d.\n",n,fibonacci(n));
+  return 0;
+}
+int fibonacci(int n){
+  if(n==1){
+    return 0;
+  }
+  else if(n==2){
+    return 1;
+  }
+  else{
+    return fibonacci(n-1)+fibonacci(n-2);
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* Q5: What will the following line produce in a C program.
+ a=0
+ printf("%d %d %d\n", a, ++a, a++) */
+#include<stdio.h>
+int main(){
+  int a=3;
+  printf("%d %d %d\n", a,++a, a++) ;//This will print 5 5 3 because compiler reads arguments from right to left.
+  return 0;
+}
+/*------------------------------------------------------------------------------------*/
+/* Q6: Write a recursive function to calculate the sum of first n natural numbers. */
+#include<stdio.h>
+int sum(int n);
+int main(){
+  printf("Enter the value of n\n");
+  int n;
+  scanf("%d", &n);
+  printf("The sum of first %d natural numbers is %d\n",n,sum(n));
+  return 0;
+}
+int sum(int n){
+  if(n==1){
+  return 1;
+  }
+  else{
+    return n+sum(n-1);
+  }
+}
+/*--------------------------------------------------------------------------------------*/
+/* Q7: Write a program using functions to print the following pattern(first n lines).
+*
+* * *
+* * * * *                                          */
+#include<stdio.h>
+void printPattern(int n);
+int main(){
+  int n=4;
+  printPattern(n);
+  return 0;
+}
+/* for n=3
+*
+***
+*****  */
+void printPattern(int n){
+  if(n==1){
+    printf("*\n");
+    return;
+  }
+  printPattern(n-1);
+  int i;
+  for(i=0;i<(2*n-1);i++){
+    printf("*");
+  }
+  printf("\n");
+}
+/*---------------------------------------------------------------------------*/
+/*Q8: Solve 7 using for loop*/
