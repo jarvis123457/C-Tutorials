@@ -33,6 +33,7 @@ int main(){
 int main(){
   int a = 6;
   int *b = &a;
+  /*  9:08:44 */
   printf("The value of b is %u\n",b);
   printf("The value of b+4 is %u\n",b+4);//16 units added
   printf("The value of b-6 is %u\n",b-6);//24 units subtracted
