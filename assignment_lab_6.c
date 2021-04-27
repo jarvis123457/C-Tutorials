@@ -21,16 +21,18 @@ int main(){
 5 4 3
 5 4
 5                    */
+5                    */
 #include<stdio.h>
-int main(){
-  for(int i=5;i;i--){
-    for(int a=i;a;a--){
-      printf("%d ",a);
+int main() {
+    for (int i = 5; i; i--) {
+        for (int a = 5; a>5-i; a--) {
+            printf("%d ", a);
+        }
+        printf("\n");
     }
-    printf("\n");
-  }
-  return 0;
+    return 0;
 }
+
 /*-----------------------------------------------------------------------------------*/
 /* Task 3: Write a program in C that prints multiplications table, from 1 to 12. */
 #include<stdio.h>
