@@ -22,3 +22,30 @@ int main(){
 // How to print complete array as matrix form.
   return 0;
 }
+/*------------------------------------------------------------------------------------*/
+/* Create a 2D array by taking input from the user. Write a function to print the content of this 2D array on the screen*/
+#include <stdio.h>
+void printArray(int a,int b,int ptr[a][b]);
+int main(){
+  int a, b;
+  printf("Enter the value of a\n");
+  scanf("%d", &a);
+  printf("Enter the value of b\n");
+  scanf("%d", &b);
+  int arr[a][b];
+  for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+      printf("Enter the value of element of row %d and column %d\n", i+1, j+1);
+      scanf("%d", &arr[i][j]);
+    }
+  }
+  printArray(a, b,arr);
+  return 0;
+}
+void printArray(int a,int b,int ptr[a][b]){
+  for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+      printf("The value of element of row %d and column %d is %d\n", i+1, j+1, ptr[i][j]);
+    }
+  }
+}
