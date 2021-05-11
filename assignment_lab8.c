@@ -77,3 +77,39 @@ int DecimaltoBinary(int n, int a){
   }
 }
 /*---------------------------------------------------------------------------------*/
+/* 4A */
+#include <stdio.h>  
+
+void Funny(void); 
+
+void main(void){ 
+    Funny();  
+    
+}  
+void Funny(void)  {  
+    int i;  
+    for(i = 1; i <=3; i = i + 1) { 
+        printf("*"); 
+        
+    } 
+    printf("\n");  
+    
+}  
+/* 4B */
+#include <stdio.h> 
+
+void Funny(void);  
+
+void main(void){ 
+    int i;  
+    for(i = 1; i <=3; i = i + 1){
+        Funny();
+        
+    }
+    printf("\n");  
+    
+} 
+void Funny(void){ 
+    printf("*"); 
+} 
+/*----------------------------------------------------------------------------------*/
