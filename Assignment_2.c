@@ -12,6 +12,7 @@ int main(){
   return 0;
 }
 void MultiplicationTable(int n, int a){
+  printf("Multiplication Table of %d\n",n);
   for(int i=0;i<a;i++){
     if((i+1)%2!=0){
       printf("%d multiplied by %d is : %d\n",n,i+1,n*(i+1));
