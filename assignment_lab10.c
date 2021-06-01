@@ -102,3 +102,52 @@ int main(){
   return 0;
 }
 /*-----------------------------------------------------------------------------*/
+/* Task 5: Write a program in C to merge two arrays of same size sorted in descending order. */
+#include <stdio.h>
+int main(){
+  int n;
+  int a;
+  int count;
+  printf("Enter the Number of elements you want to store in both arrays.\n");
+  scanf("%d",&n);
+  int a1[n];
+  for(int i=0;i<n;i++){
+    printf("Enter the value of Element %d in Array 1: \n",i+1);
+    scanf("%d",&a);
+    a1[i] = a;
+  }
+  int a2[n];
+  for(int i=0;i<n;i++){
+    printf("Enter the value of Element %d in Array 2: \n",i+1);
+    scanf("%d",&a);
+    a2[i] = a;
+  }
+  int a3[2*n];
+  int a4[2*n];
+  int a5[2*n];
+  for(int i=0;i<n;i++){
+    a3[i]=a1[i];
+    a3[n+i]=a2[i];
+    a4[i]=a1[i];
+    a4[n+i]=a2[i];
+  }
+  for(int i=0;i<(2*n);i++){
+    count =0;
+    for(int j=0;j<(2*n);j++){
+      if(i!=j && a3[i]>a4[j]){
+        count++;
+        }
+      }
+    for(int j=i;j>=0;j--){
+      if(i!=j && a3[i]==a4[j]){
+        count++;
+      }
+    }
+    a5[((2*n)-1)-count] = a3[i]; 
+  }
+  printf("Printing In Descending Order\n");
+  for(int i=0;i<(2*n);i++){
+    printf("%d\n",a5[i]);
+  }
+  return 0;
+}
