@@ -66,3 +66,39 @@ int main(){
 
   return 0;
 }
+/*---------------------------------------------------------------------------------------*/
+/* Task 4: Write a program in C to print all unique elements in an array. */
+#include <stdio.h>
+int main(){
+  int n;
+  int a;
+  int count;
+  printf("Enter the Number of elements you want to store.\n");
+  scanf("%d",&n);
+  int a1[n];
+  for(int i=0;i<n;i++){
+    printf("Enter the value of Element %d: \n",i+1);
+    scanf("%d",&a);
+    a1[i] = a;
+  }
+  int a2[n];
+  for(int i=0;i<n;i++){
+    a2[i] = a1[i];
+  }
+  for(int i=0;i<n;i++){
+    count = 0;
+    for(int j=0;j<n;j++){
+      if(a1[i]==a2[j] && i!=j){
+        count++;
+      }
+      else{
+        count = count;
+      }
+    }
+    if(count==0){
+      printf("Element %d whose value is %d is unique.\n",i+1,a1[i]);
+    }
+  }
+  return 0;
+}
+/*-----------------------------------------------------------------------------*/
