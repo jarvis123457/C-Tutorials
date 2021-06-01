@@ -55,7 +55,7 @@ int main(){
       if(a1[i]==a2[k-1]){
         count = 0;
         }
-        }
+      }
     duplicates = count - 1;
     if(duplicates>0){
       printf("The Duplicates of Element %d whose value is %d are: %d\n",i+1,a1[i],duplicates);
