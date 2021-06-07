@@ -22,9 +22,63 @@ int main(){
     printf("%d\n",number);
     if(number==1){
       printf("Shambhu Has Elected To Bat First\n");
+      printf("Your Bowling Has Started Now.\n\n");
+    for(int i=0;i<wickets;i++){
+      a=0;
+      printf("Shambhu ka Larka %d is Batting.\n\n",i+1);
+      a = Bowling(a);
+      printf("Shambhu Ka Larka %d scored %d Runs.\n\n",i+1,a);
+      compscore += a;
+    }
+    printf("Shambhu's team has scored %d Runs\n\n",compscore);
+    printf("You Have to make %d Runs to Win the game.\n",compscore+1);
+    printf("Your Batting Has Started.\n");
+    for(int i=0;i<wickets && score<compscore;i++){
+      a=0;
+      printf("Enter the name of your Batsman Not longer than 30 characters. No Spaces in the Name.\n\n");
+      scanf("%s",ptr);
+      a = Batting(a);
+      score += a;
+      printf("%s Has Scored %d Runs\n\n",ptr, a);
+    }
+    if(compscore<score){
+      printf("Congratulations!!! You Have Won the Match.\n You Scored %d Runs.\n\n\n",score);
+      printf("Shambhu's Team scored %d Runs.\n\n\n",compscore);
+    }
+    else if(score<compscore){
+      printf("Shambhu and Sons Have Taken this Match Out of Your Grasp. You Lose!!!!");
+      printf("Shambhu's team Scored %d Runs \n\n\n You Scored %d Runs.\n\n\n",compscore,score);
+      }
     }
     else if(number==2){
       printf("Shambhu Has Elected To Bowl First\n");
+      printf("Your Batting Has Started.\n");
+    for(int i=0;i<wickets;i++){
+      a=0;
+      printf("Enter the name of your Batsman Not longer than 30 characters. No Spaces in the Name.\n\n");
+      scanf("%s",ptr);
+      a = Batting(a);
+      score += a;
+      printf("%s Has Scored %d Runs\n\n",ptr, a);
+    }
+    printf("Your team has scored %d Runs\n\n",score);
+    printf("Shambhu needs to make %d Runs to Win the game.\n",score+1);
+    printf("Your Bowling Has Started Now.\n\n");
+    for(int i=0;i<wickets && compscore<score;i++){
+      a=0;
+      printf("Shambhu ka Larka %d is Batting.\n\n",i+1);
+      a = Bowling(a);
+      printf("Shambhu Ka Larka %d scored %d Runs.\n\n",i+1,a);
+      compscore += a;
+    }
+    if(compscore<score){
+      printf("Congratulations!!! You Have Won the Match.\n You Scored %d Runs.\n\n\n",score);
+      printf("Shambhu's Team scored %d Runs.\n\n\n",compscore);
+    }
+    else if(score<compscore){
+      printf("Shambhu and Sons Have Taken this Match Out of Your Grasp. You Lose!!!!");
+      printf("Shambhu's team Scored %d Runs \n\n\n You Scored %d Runs.\n\n\n",compscore,score);
+      }
     }
   }
   else if(BattingOrBowling==1){
@@ -41,7 +95,7 @@ int main(){
     printf("Your team has scored %d Runs\n\n",score);
     printf("Shambhu needs to make %d Runs to Win the game.\n",score+1);
     printf("Your Bowling Has Started Now.\n\n");
-    for(int i=0;i<wickets || compscore>score;i++){
+    for(int i=0;i<wickets && compscore<score;i++){
       a=0;
       printf("Shambhu ka Larka %d is Batting.\n\n",i+1);
       a = Bowling(a);
@@ -59,6 +113,33 @@ int main(){
   }
   else if(BattingOrBowling==2){
     printf("You Have Elected To Bowl First\n");
+    printf("Your Bowling Has Started Now.\n\n");
+    for(int i=0;i<wickets;i++){
+      a=0;
+      printf("Shambhu ka Larka %d is Batting.\n\n",i+1);
+      a = Bowling(a);
+      printf("Shambhu Ka Larka %d scored %d Runs.\n\n",i+1,a);
+      compscore += a;
+    }
+    printf("Shambhu's team has scored %d Runs\n\n",compscore);
+    printf("You Have to make %d Runs to Win the game.\n",compscore+1);
+    printf("Your Batting Has Started.\n");
+    for(int i=0;i<wickets && score<compscore;i++){
+      a=0;
+      printf("Enter the name of your Batsman Not longer than 30 characters. No Spaces in the Name.\n\n");
+      scanf("%s",ptr);
+      a = Batting(a);
+      score += a;
+      printf("%s Has Scored %d Runs\n\n",ptr, a);
+    }
+    if(compscore<score){
+      printf("Congratulations!!! You Have Won the Match.\n You Scored %d Runs.\n\n\n",score);
+      printf("Shambhu's Team scored %d Runs.\n\n\n",compscore);
+    }
+    else if(score<compscore){
+      printf("Shambhu and Sons Have Taken this Match Out of Your Grasp. You Lose!!!!");
+      printf("Shambhu's team Scored %d Runs \n\n\n You Scored %d Runs.\n\n\n",compscore,score);
+    }
   }
   else if(BattingOrBowling>=3 || BattingOrBowling<0){
     printf("Invalid Input\n");
@@ -75,8 +156,7 @@ int Toss(){
   int toss1;
   srand(time(0));
   number = rand()%5+1;
-  printf("%d\n",number);
-  printf("TOSS\n");
+  printf("---------------------TOSS-------------------\n");
   printf("Press: \n 1 For Heads\n 2 For Tails\n");
   scanf("%d", &toss);
   if(toss==1){
@@ -133,7 +213,6 @@ int Batting(int score){
   int PlayerNumber;
   srand(time(0));
   number=rand()%6+1;
-  printf("The Number is %d\n", number);
   printf("Enter any number from 1 to 6\n");
   scanf("%d",&PlayerNumber);
   if(PlayerNumber<0 || PlayerNumber>6){
@@ -154,7 +233,6 @@ int Bowling(int score){
   int PlayerNumber;
   srand(time(0));
   number=rand()%6+1;
-  printf("The Number is %d\n", number);
   printf("Enter any number from 1 to 6\n");
   scanf("%d",&PlayerNumber);
   if(PlayerNumber<0 || PlayerNumber>6){
@@ -166,7 +244,7 @@ int Bowling(int score){
     return score;
   }
   else{
-    score+=PlayerNumber;
+    score+=number;
     return Bowling(score);
   }
 }
