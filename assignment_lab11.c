@@ -12,7 +12,7 @@ int main(){
       scanf("%d",&b[i][j]);
     }
   }
-  printf("The Subtraction of array B from array A:  \n")
+  printf("The Subtraction of array B from array A:  \n");
   for(int i=0;i<3;i++){
     for(int j=0;j<3;j++){
       c[i][j]=a[i][j]-b[i][j];
