@@ -49,6 +49,9 @@ int main(){
       printf("Shambhu and Sons Have Taken this Match Out of Your Grasp. You Lose!!!!");
       printf("Shambhu's team Scored %d Runs \n\n\n You Scored %d Runs.\n\n\n",compscore,score);
       }
+     else if(score==compscore){
+       printf("The Game Has Drawn");
+     }
     }
     else if(number==2){
       printf("Shambhu Has Elected To Bowl First\n");
