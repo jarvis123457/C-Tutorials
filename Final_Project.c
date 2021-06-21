@@ -269,12 +269,10 @@ int main(){
   printf("---- Enter number of wickets you want to play for: ----\n");
   scanf("%d",&wickets);
   BattingOrBowling= Toss();
-  printf("%d\n",BattingOrBowling);
   if(BattingOrBowling==0){
     int number;
     srand(time(0));
     number = rand()%2+1;
-    printf("%d\n",number);
     if(number==1){
       printf("-----Shambhu has Elected to Bat first-----\n");
       printf("Your Bowling Has Started Now.\n\n");
