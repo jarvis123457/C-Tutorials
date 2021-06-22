@@ -30,3 +30,23 @@ int main(){
   return 0;
 }
 /*-----------------------------------------------------------------------------------------------------*/
+/* Question 3 : Write your own version of strlen function from <string.h> */
+#include <stdio.h>
+int strlength(char *st);
+int main(){
+  char st[] = "Lavish";
+  int l = strlength(st);
+  printf("the length of this string is %d\n", l);
+  return 0;
+}
+int strlength(char *st){
+  char *ptr = st;
+  int len = 0;
+  while(*ptr != '\0'){
+    len++;
+    ptr++;
+  }
+  return len;
+}
+/*-----------------------------------------------------------------------------*/
+
