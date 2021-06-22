@@ -49,4 +49,27 @@ int strlength(char *st){
   return len;
 }
 /*-----------------------------------------------------------------------------*/
-
+/* Question 4 : Write a function slice() to slice a string. It should change the original string such that it is now the sliced string. Take m and n as the start and ending position forslice. */
+#include <stdio.h>
+void slice(char *st, int m, int n){
+    printf("Into The Function\n");
+    int i;
+    for(i=0;(m+i)<n;i++){
+        st[i] = st[i+m];
+    }
+    st[i] = '\0';
+}
+int main(){
+    char st[100];
+    int m, n;
+    printf("Enter A String\n");
+    scanf("%s", st);
+    printf("Enter a value from which you want to slice the string.\n");
+    scanf("%d", &m);
+    printf("Enter a value at which you want to end slicing of the string.\n");
+    scanf("%d", &n);
+    printf("Going Into the function");
+    slice(st, m-1, n-1);
+    printf("The sliced string is %s\n", st);
+    return 0;
+}
