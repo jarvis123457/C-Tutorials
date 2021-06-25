@@ -96,3 +96,48 @@ void MYstrcpy(char *target, char *source, int n){
     target[i] = '\0';
 }
 /*--------------------------------------------------------------------------------------------*/
+/* Question 6 : Write a program to encrypt a string by adding 1 to ascii values of its characters.*/
+/* Question 7 : Write a program to decrypt the string encrypted using encrypt function in problem 6. */
+#include <stdio.h>
+void encrypt(char *c);
+void decrypt(char *c);
+int main(){
+    int n;
+    printf("Enter number of characters in your string.\n");
+    scanf("%d", &n);
+    char c[2*n];
+    printf("Enter your string to be encrypted.\n");
+    scanf("%s", c);
+    encrypt(c);
+    printf("The encrypted String is %s\n", c);
+    printf("If you want to decrypt the string also: \nPress 1 to decrypt \nIf not Then \nPress 2\n");
+    int a;
+    scanf("%d", &a);
+    if(a==1){
+        decrypt(c);
+        printf("The decrypted String is %s", c);
+    }
+    else if(a==2){
+        printf("Good Bye\n");
+    }
+    else{
+        printf("Invalid Input\n");
+    }
+    return 0;
+}
+void encrypt(char *c){
+    char *ptr = c;
+    while(*ptr!= '\0'){
+        *ptr = *ptr + 1;
+        ptr++;
+    }
+    c = ptr;
+}
+void decrypt(char *c){
+    char *ptr =c;
+    while(*ptr != '\0'){
+        *ptr = *ptr - 1;
+        ptr++;
+    }
+    c = ptr;
+}
