@@ -141,3 +141,36 @@ void decrypt(char *c){
     }
     c = ptr;
 }
+/*-----------------------------------------------------------------*/
+/* Question 8 : Write a program to count the occurence of a given character in a string. */
+#include <stdio.h>
+int occurence(char c[], char a);
+int main(){
+    int n;
+    int count;
+    printf("Enter the number of characters in your string\n");
+    scanf("%d", &n);
+    char c[2*n];
+    printf("Enter Your String\n");
+    scanf("%s", &c);
+    char a;
+    printf("Enter the character whose occurence you need to find.\n");
+    fflush(stdin);
+    scanf("%c", &a);
+    count = occurence(c, a);
+    printf("The character %c occurs %d times in the string %s",a,count,c);
+    return 0;
+}
+int occurence(char c[], char a){
+    char *ptr = c;
+    int count = 0;
+    while(*ptr != '\0'){
+        if(*ptr==a){
+            count++;
+        }
+        ptr++;
+    }
+    return count;
+}
+/*--------------------------------------------------------------------------------------------*/
+
