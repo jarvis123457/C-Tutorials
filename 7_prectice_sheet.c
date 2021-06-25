@@ -73,3 +73,26 @@ int main(){
     printf("The sliced string is %s\n", st);
     return 0;
 }
+/*---------------------------------------------------------------------------------------------*/
+/* Question 5 : Write your own version of function strcpy from <string.h> */
+#include <stdio.h>
+void MYstrcpy(char *target, char *source, int n);
+int main(){
+    int n;
+    printf("Enter the number of characters in your string.\n");
+    scanf("%d",&n);
+    char target[2*n], source[2*n];
+    printf("Enter your String\n");
+    scanf("%s", &source);
+    MYstrcpy(target, source, n);
+    printf("The copied string is %s", target);
+    return 0;
+}
+void MYstrcpy(char *target, char *source, int n){
+    int i;
+    for(i=0;i<n;i++){
+        target[i]=source[i];
+    }
+    target[i] = '\0';
+}
+/*--------------------------------------------------------------------------------------------*/
