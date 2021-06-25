@@ -173,4 +173,39 @@ int occurence(char c[], char a){
     return count;
 }
 /*--------------------------------------------------------------------------------------------*/
-
+/* Question 9 : Write a program to check whether or not a character is present in a string or not. */
+#include <stdio.h>
+void CharCheck(char *c, char a);
+int main(){
+    printf("Enter the number of characters in your string.\n");
+    int n;
+    scanf("%d", &n);
+    char c[2*n];
+    printf("Enter Your String.\n");
+    scanf("%s", &c);
+    char a;
+    printf("Of which character's presence you wish to check for?\n");
+    fflush(stdin);
+    scanf("%c",&a);
+    CharCheck(c,a);
+    return 0;
+}
+void CharCheck(char *c, char a){
+    char *ptr = c;
+    int count = 0;
+    while(*ptr != '\0' || *ptr==a){
+        if(*ptr==a){
+            count+=1;
+        }
+        else{
+            count += 0;
+        }
+        ptr++;
+    }
+    if(count >= 1){
+        printf("The character %c is Present in the string %s", a,c);
+    }
+    else{
+        printf("The character %c is Absent in the string %s", a, c);
+    }
+}
