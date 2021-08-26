@@ -194,3 +194,87 @@ int CompareDates(dte d1, dte d2){
   }
 }
 /*-------------------------------------------------------------------------------------------------*/
+/* Challenge => Write a structure capable of storing date. Write a function to compare those dates.        */
+#include<stdio.h>
+#include<string.h>
+typedef struct Date{
+  int date;
+  int month;
+  int year;
+  int hours;
+  int minutes;
+  int seconds;
+}dte;
+void DisplayDate(dte d1);
+int CompareDates(dte d1, dte d2);
+int main(){
+  dte x = {26,8,2021,17,15,53};
+  dte y = {26,8,2021,17,15,55};
+  DisplayDate(x);
+  DisplayDate(y);
+  int a = CompareDates(x,y);
+  if(a==1){
+    printf("The date x is greater than the date y\n.");
+  }
+  else if(a==2){
+    printf("The date x is the same as date y\n.");
+  }
+  else{
+    printf("The date y is greater than date x\n");
+  }
+  return 0;
+}
+void DisplayDate(dte d1){
+  printf("The Date is : %d-%d-%d %d:%d:%d\n",d1.year,d1.month,d1.date,d1.hours,d1.minutes,d1.seconds);
+}
+int CompareDates(dte d1, dte d2){
+  if(d1.year>d2.year){
+    return 1;
+  }
+  else if(d1.year==d2.year){
+    if(d1.month>d2.month){
+      return 1;
+    }
+    else if(d1.month==d2.month){
+      if(d1.date>d2.date){
+        return 1;
+      }
+      else if(d1.date==d2.date){
+        if(d1.hours>d2.hours){
+          return 1;
+        }
+        else if(d1.hours==d2.hours){
+          if(d1.minutes>d2.minutes){
+            return 1;
+          }
+          else if(d1.minutes==d2.minutes){
+            if(d1.seconds>d2.seconds){
+              return 1;
+            }
+            else if(d1.seconds==d2.seconds){
+              return 2;
+            }
+            else{
+              return 0;
+            }
+          }
+          else{
+            return 0;
+          }
+        }
+        else{
+          return 0;
+        }
+      }
+      else{
+        return 0;
+      }
+    }
+    else{
+      return 0;
+    }
+  }
+  else{
+    return 0;
+  }
+}
