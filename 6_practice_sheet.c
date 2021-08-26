@@ -90,3 +90,29 @@ int main(){
   return 0;
 }
 /*-----------------------------------------------------------------------------------*/
+/* Question 6 => Create an array of 5 complex numbers created in problem 5 and display them with the help of a display function. The values must be taken as an input from the user.        */
+#include<stdio.h>
+#include<string.h>
+typedef struct complex{
+  int a;
+  int b;
+}cmp;
+
+void displaycnums(cmp arr[], int n);
+int main(){
+  cmp cnums[5];
+  for(int i=0;i<5;i++){
+    printf("Enter the real value for Complex Number : %d\n", i+1);
+    scanf("%d",&cnums[i].a);
+    printf("Enter the imaginary value for Complex Number : %d\n", i+1);
+    scanf("%d",&cnums[i].b);
+  }
+  displaycnums(cnums, 5);
+  return 0;
+}
+void displaycnums(cmp arr[], int n){
+  for(int i=0;i<n;i++){
+    printf("The Complex number => %d = %d + %di\n",i+1,arr[i].a,arr[i].b);
+  }
+}
+/*---------------------------------------------------------------------------------------*/
