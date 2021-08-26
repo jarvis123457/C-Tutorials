@@ -42,3 +42,7 @@ struct vector sumVector(struct vector v1, struct vector v2){
   result.y=v1.y+v2.y;
   return result;
 }
+/*---------------------------------------------------------------------------------------------*/
+/* Question 3 => Twenty integers are to be stored in memory what will you prefer?        */
+/* Answer = Array -> Because the data type is similar not different types of variables are involved. */
+/*-------------------------------------------------------------------------------------------------*/
