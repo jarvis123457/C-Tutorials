@@ -67,3 +67,26 @@ int main(){
   return 0;
 }
 /*---------------------------------------------------------------------------------------------------*/
+/* Question 5 => Write a program with a structure representing a complex number.        */
+#include<stdio.h>
+#include<string.h>
+typedef struct complex{
+  int a;
+  int b;
+}cmp;
+
+
+int main(){
+  cmp x,y,z;
+  x.a=6;
+  x.b=4;
+  y.a=3;
+  y.b=9;
+  z.a=3;
+  z.b=3;
+  printf("Complex number => x = %d + i*%d\n",x.a,x.b);
+  printf("Complex number => y = %d + i*%d\n",y.a,y.b);
+  printf("Complex number => z = %d + i*%d\n",z.a,z.b);
+  return 0;
+}
+/*-----------------------------------------------------------------------------------*/
