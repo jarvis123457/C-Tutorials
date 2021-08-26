@@ -116,3 +116,15 @@ void displaycnums(cmp arr[], int n){
   }
 }
 /*---------------------------------------------------------------------------------------*/
+/* Question 7 => Write problem 5's structure using typedef keyword.        */
+/*---------------------------------------------------------------------------------------*/
+/* Question 8 => Create a structure representing a bank account of a customer. What Fields did youuse and why?        */
+typedef struct BankAccount{
+  int acc_num;
+  char name;
+  int balance;
+  int yearofexpiry;
+  int securitycode;
+  int yearofissue;
+}bank;
+/*----------------------------------------------------------------------------------*/
