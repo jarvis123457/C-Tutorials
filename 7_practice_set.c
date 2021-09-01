@@ -28,3 +28,28 @@ for(int i=0;i<20;i++){
   return 0;
 }
 /*----------------------------------------------------------------------------------*/
+/* Problem 2: Write a program to read a text file character by character and write its content twice in a separate file  */
+#include <stdio.h>
+
+int main(){
+  char c;
+  FILE *ptr1;
+  FILE *ptr2;
+  ptr1 = fopen("7_practice_set_problem3_1.txt", "r");
+  ptr2 = fopen("7_practice_set_problem3_2.txt", "w");
+  c=fgetc(ptr1);
+  while(c!=EOF){
+    fputc(c, ptr2);
+    c=fgetc(ptr1);
+  }
+  fputc('\n', ptr2);
+  rewind(ptr1);
+  c=fgetc(ptr1);
+  while(c!=EOF){
+    fputc(c, ptr2);
+    c=fgetc(ptr1);
+  }
+  fclose(ptr1);
+  fclose(ptr2);
+  return 0;
+}
