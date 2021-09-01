@@ -78,3 +78,21 @@ int main(){
   fclose(ptr);
   return 0;
 }
+/*----------------------------------------------------------------------------------*/
+/* Problem 5: Write a program to modify a file containing an integer to double its value
+  name1, 3300
+  name2, 7700  */
+#include <stdio.h>
+#include <string.h>
+int main(){
+  int a;
+  FILE *ptr;
+  ptr = fopen("7_practice_set_problem5.txt", "r");
+  fscanf(ptr, "%d",&a);
+  printf("%d",a);
+  ptr = fopen("7_practice_set_problem5.txt", "w");
+  fprintf(ptr, "%d",2*a);
+  fclose(ptr);
+  return 0;
+}
+/*--------------------------------------------------------------------------------*/
